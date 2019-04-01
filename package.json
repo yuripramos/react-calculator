@@ -1,7 +1,7 @@
 {
-  "name": "newest-york-times-feed",
+  "name": "react-calculator",
   "version": "1.0.0",
-  "description": "The Newest York Times App",
+  "description": "app that makes calc",
   "main": "/src/App.js",
   "engines": {
     "node": ">=8.9.3"
