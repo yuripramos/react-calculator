@@ -5,7 +5,7 @@ import { arrayOf, bool, shape, string, number } from "prop-types";
 
 import ResultComponent from "./ResultComponent";
 import KeyPadComponent from "./Keypad";
-import { ContentWrapper, Title } from "./styles";
+import { ContentWrapper } from "./styles";
 
 class Calculator extends Component {
   constructor(props) {
@@ -13,8 +13,9 @@ class Calculator extends Component {
     this.state = {
       result: ""
     };
+    this.onClick = this.onClick.bind(this);
   }
-  onClickAction(button) {
+  onClick(button) {
     if (button === "=") {
       this.calculate();
     } else if (button === "C") {
@@ -46,11 +47,24 @@ class Calculator extends Component {
       });
     }
   }
+
+  reset() {
+    this.setState({
+      result: ""
+    });
+  }
+
+  backspace() {
+    this.setState({
+      result: this.state.result.slice(0, -1)
+    });
+  }
+
   render() {
     return (
       <ContentWrapper>
         <ResultComponent result={this.state.result} />
-        <KeyPadComponent onClick={this.onClickAction} />
+        <KeyPadComponent onClick={this.onClick} />
       </ContentWrapper>
     );
   }

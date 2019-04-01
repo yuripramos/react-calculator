@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+import { Result, Line } from "./styles";
 
 class ResultComponent extends Component {
   render() {
-    // let { result } = this.props;
+    let { result } = this.props;
+    console.log("result", result);
     return (
-      <div className="result">
-        result
-        {/* <p>{result}</p> */}
-      </div>
+      <Result>
+        <Line>{result}</Line>
+      </Result>
     );
   }
 }
