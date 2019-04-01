@@ -15,7 +15,6 @@ make installation
 make build
 make start-server
 access http://localhost:3000/calc
-navigate through menu links at the header
 ```
 
 If you **don't** have makefile enviroment ready, do this instead :
@@ -26,7 +25,6 @@ npm install or yarn install
 npm run build
 npm run start:server
 access http://localhost:3000/calc
-navigate through menu links at the header
 ```
 
 **Requires node >= 8.9.3**
@@ -37,7 +35,6 @@ navigate through menu links at the header
 npm install or yarn install
 npm run dev
 access http://localhost:3000/calc
-navigate through menu links at the header
 ```
 
 ## :exclamation: Credits
