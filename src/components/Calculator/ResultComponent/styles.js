@@ -4,7 +4,8 @@ import { rem } from "../../../styles/tools";
 export const Result = styled.div`
   height: ${rem(60)};
   background-color: #bbb;
-  width: 100%;
+  width: ${rem(280)};
+  margin: 0 auto;
 `;
 
 export const Line = styled.p`

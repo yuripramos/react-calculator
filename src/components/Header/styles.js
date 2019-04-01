@@ -21,6 +21,7 @@ export const Title = styled.h1`
   font-size: ${rem(25)};
   text-align: center;
   color: ${white};
+  letter-spacing: 1.5,
   text-shadow: 0.1875rem 0.1rem rgba(132, 129, 129, 0.15);
 `;
 

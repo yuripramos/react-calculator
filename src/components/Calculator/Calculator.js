@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import { Container, Row, Column } from "../../styles/grid";
-import { arrayOf, bool, shape, string, number } from "prop-types";
+import { Container, Row } from "../../styles/grid";
+import { func } from "prop-types";
 
 import ResultComponent from "./ResultComponent";
 import KeyPadComponent from "./Keypad";
@@ -62,34 +62,25 @@ class Calculator extends Component {
 
   render() {
     return (
-      <ContentWrapper>
-        <ResultComponent result={this.state.result} />
-        <KeyPadComponent onClick={this.onClick} />
-      </ContentWrapper>
+      <Container>
+        <Row>
+          <ContentWrapper>
+            <ResultComponent result={this.state.result} />
+            <KeyPadComponent onClick={this.onClick} />
+          </ContentWrapper>
+        </Row>
+      </Container>
     );
   }
 }
 
 Calculator.defaultProps = {};
 
-// Content.propTypes = {
-//   isFilled: bool,
-//   FeedArray: arrayOf(
-//     shape({
-//       title: string,
-//       published_date: string,
-//       byline: string,
-//       url: string,
-//       short_url: string,
-//       multimedia: arrayOf(
-//         shape({
-//           url: string,
-//           width: number,
-//           height:number
-//         })
-//       )
-//     })
-//   ),
-// };
+Calculator.propTypes = {
+  calculate: func,
+  reset: func,
+  onClick: func,
+  backspace: func
+};
 
 export default Calculator;

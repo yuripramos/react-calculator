@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import { shape, func } from "prop-types";
-import { black } from "../../styles/settings";
-import Icon from "../common/Icon";
 import { Container, Row, Column } from "../../styles/grid";
-import SidebarMenu from "../common/SidebarMenu";
 
-import { HeaderWrapper, TitleWrapper } from "./styles";
+import { HeaderWrapper, TitleWrapper, Title } from "./styles";
 
 class Header extends Component {
   constructor(props) {
@@ -31,7 +28,10 @@ class Header extends Component {
         <Container>
           <Row>
             <Column>
-              <TitleWrapper>Calculator</TitleWrapper>
+              <TitleWrapper>
+                {" "}
+                <Title>React Calculator</Title>
+              </TitleWrapper>
             </Column>
           </Row>
         </Container>

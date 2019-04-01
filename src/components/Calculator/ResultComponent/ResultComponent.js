@@ -1,16 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
+import { string } from "prop-types";
+
 import { Result, Line } from "./styles";
 
-class ResultComponent extends Component {
-  render() {
-    let { result } = this.props;
-    console.log("result", result);
-    return (
-      <Result>
-        <Line>{result}</Line>
-      </Result>
-    );
-  }
+function ResultComponent({ result }) {
+  return (
+    <Result>
+      <Line>{result}</Line>
+    </Result>
+  );
 }
 
 export default ResultComponent;
+
+ResultComponent.propTypes = {
+  result: string
+};

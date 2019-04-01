@@ -20,3 +20,4 @@ export const red10 = "#ff5757";
 export const darkestBlue = "#06366f";
 export const darkerBlue = "#043268";
 export const darkBlue = "#4a90e2";
+export const trueWhite = "#000000";
