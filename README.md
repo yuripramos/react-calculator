@@ -40,11 +40,6 @@ access http://localhost:3000/calc
 navigate through menu links at the header
 ```
 
-```
-
-## Roadmap
-
-
 ## :exclamation: Credits
 
 Yuri Ramos
@@ -52,4 +47,3 @@ Yuri Ramos
 ## :scroll: License
 
 MIT
-```
