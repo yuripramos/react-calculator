@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
-import Subnav from "../../components/common/Subnav";
 
-import Content from "../Content";
+import Calculator from "../Calculator";
 
 import Layout from "../common/Layout";
 
@@ -96,7 +95,7 @@ class Routes extends Component {
         <Layout>
           <Route>
             <Switch>
-              <Route exact path="/calc" component={Content} />
+              <Route exact path="/calc" component={Calculator} />
             </Switch>
           </Route>
         </Layout>

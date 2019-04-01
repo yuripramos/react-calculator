@@ -26,18 +26,12 @@ class Header extends Component {
   }
 
   render() {
-    const {
-      history,
-    } = this.props;
-
     return (
       <HeaderWrapper>
         <Container>
           <Row>
             <Column>
-              <TitleWrapper>
-                CALCULATOR
-              </TitleWrapper>
+              <TitleWrapper>Calculator</TitleWrapper>
             </Column>
           </Row>
         </Container>
@@ -47,7 +41,6 @@ class Header extends Component {
 }
 
 export default Header;
-
 
 Header.propTypes = {
   topUserStories: func,
