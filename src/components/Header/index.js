@@ -1,14 +1,25 @@
 import { connect } from "redux-zero/react";
-import { withRouter } from "react-router-dom";
+import { combineActions } from "redux-zero/utils";
 
 import Header from "./Header";
-import newsActions from "../../actions/News";
+import Forecastactions from "../../actions/Forecast";
+import modalActions from "../../actions/modal";
 
 export default connect(
-  ({ topUserStories, isFilled, FeedArray }) => ({
-    topUserStories,
-    isFilled,
-    FeedArray
+  ({
+    handleUserInput,
+    search,
+    clearSearch,
+    isLoading,
+    isError,
+    clearError
+  }) => ({
+    handleUserInput,
+    search,
+    clearSearch,
+    isLoading,
+    isError,
+    clearError
   }),
-  newsActions
-)(withRouter(Header));
+  combineActions(Forecastactions, modalActions)
+)(Header);

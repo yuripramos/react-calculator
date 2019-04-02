@@ -1,11 +1,10 @@
-import { INITIAL_LANGUAGE } from "../i18n";
+import { INITIAL_UNIT } from "../i18n";
 
 const commonState = {
-  isFilled: false,
-  current: false,
-  userInfo: {
-    preferredLanguage: INITIAL_LANGUAGE
-  },
+  citiesSearched: [],
+  unit: INITIAL_UNIT,
+  isTimeMachineActive: false,
+  isError: false,
 };
 
 export default commonState;

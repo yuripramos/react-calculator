@@ -12,14 +12,16 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: "body"
 });
 
-const CleanPlugin = new CleanWebpackPlugin(["build"]);
+const CleanPlugin = new CleanWebpackPlugin(["static"]);
 
 const DefinePlugin = new webpack.DefinePlugin({
   "process.env": {
     NODE_ENV: JSON.stringify("development")
   },
-  API_URL: JSON.stringify("https://api.nytimes.com/svc/topstories/v2"),
-  SECRET_KEY: JSON.stringify("CWVf5pfTZPYZUKKPWYX9SW0ZZLMrtpgd")
+  API_URL: JSON.stringify("https://api.darksky.net/forecast"),
+  SECRET_KEY: JSON.stringify("1af3f94f02d94fb425b5eee315915259"),
+  REVERSE_PROXY: JSON.stringify("https://thingproxy.freeboard.io/fetch"),
+  OPEN_CAGE_KEY: JSON.stringify("aa0e992832114613b039f4e309c258f6")
 });
 
 const ExtractTextPluginCSS = new ExtractTextPlugin({
@@ -58,30 +60,16 @@ const config = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /.jsx?$/,
+        loader: "babel-loader",
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [
-              ["@babel/preset-env", { modules: false }],
-              "@babel/preset-react"
-            ],
-            plugins: [
-              "@babel/plugin-proposal-object-rest-spread",
-              "@babel/plugin-transform-async-to-generator"
-            ]
-          }
+        options: {
+          presets: [["es2015", { modules: false }], "react"],
+          plugins: [
+            "transform-object-rest-spread",
+            "transform-async-to-generator"
+          ]
         }
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: { minimize: true }
-          }
-        ]
       },
       {
         test: /\.css$/,

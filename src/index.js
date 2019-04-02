@@ -11,6 +11,6 @@ app.get("*", (req, res) => {
 });
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`App listening to ${PORT}/calc ....`);
+  console.log(`App listening to ${PORT} ....`);
   console.log("Press Ctrl+C to quit.");
 });

@@ -1,17 +1,17 @@
 import styled, { css } from "styled-components";
 import { rem, media } from "../../styles/tools";
-import { white, grey40 } from "../../styles/settings";
+import { white, lightpurple } from "../../styles/settings";
 
 export const HeaderWrapper = styled.header`
-  height: ${rem(88)};
+  height: ${rem(128)};
   padding-top: ${rem(10)};
-  background: ${grey40};
+  background: ${lightpurple};
   text-align: center;
   ${media.md(css`
     text-align: center;
   `)};
   ${media.lg(css`
-    height: ${rem(110)};
+    height: ${rem(200)};
     padding-top: ${rem(6)};
   `)};
 `;
@@ -21,7 +21,6 @@ export const Title = styled.h1`
   font-size: ${rem(25)};
   text-align: center;
   color: ${white};
-  letter-spacing: 1.5,
   text-shadow: 0.1875rem 0.1rem rgba(132, 129, 129, 0.15);
 `;
 

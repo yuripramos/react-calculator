@@ -1,43 +1,40 @@
 import React, { Component } from "react";
-import { EN_US } from "../constants";
+import { SI } from "../constants";
 
 let data = {};
-let language;
+let unit;
 
-export const storedLanguage =
-  sessionStorage.getItem("preferredLanguage");
-
-export const INITIAL_LANGUAGE = EN_US;
+export const INITIAL_UNIT = SI;
 
 export function setTranslations(translations) {
   data = translations;
   return data;
 }
 
+export function setUnit(u) {
+  unit = u;
+  sessionStorage.setItem("preferredUnits", u);
 
-export function setLanguage(lang) {
-  language = lang;
-  sessionStorage.setItem("preferredLanguage", lang);
-
-  return language;
+  return unit;
 }
 
-export function getLanguage() {
-  return language;
+export function getUnit() {
+  return unit;
 }
 
-export function isEsES() {
-  return language === "es-ES";
+export function isUS() {
+  return unit === "us";
 }
 
-export function isEnUS() {
-  return language === "en-US";
+export function isSI() {
+  return unit === "si";
 }
 
-export async function bootstrap(lang = INITIAL_LANGUAGE) {
-  setLanguage(lang);
 
-  const i18nStatus = await require('../../../i18n/'+lang+'.json');
+export async function bootstrap(unit = SI) {
+  setUnit(unit);
+
+  const i18nStatus = await require(`../../../i18n/${unit}.json`);
 
   return setTranslations(i18nStatus);
 }
@@ -56,34 +53,34 @@ export const withI18n = WrappedComponent => {
       };
     }
 
-    setLanguage(lang = INITIAL_LANGUAGE) {
-      setLanguage(lang);
+    setUnit(unit = INITIAL_UNIT) {
+      setUnit(unit);
       this.setState({ done: false });
 
-      return bootstrap(lang);
+      return bootstrap(unit);
     }
 
     async componentDidMount() {
       const self = this;
-      this.unlistenLanguage = this.props.subscribe(async function(state) {
-        const languageProp =
-          state.userInfo && state.userInfo.preferredLanguage
-            ? state.userInfo.preferredLanguage
-            : INITIAL_LANGUAGE;
-        if (languageProp !== getLanguage()) {
-          await self.setLanguage(languageProp);
+      this.unlistenUnit = this.props.subscribe(async function(state) {
+        const unitProp =
+          state.unit
+            ? state.unit
+            : INITIAL_UNIT;
+        if (unitProp !== getUnit()) {
+          await self.setUnit(unitProp);
           self.setState({ done: true });
 
-          return languageProp;
+          return unitProp;
         }
       });
 
-      await this.setLanguage();
+      await this.setUnit();
       this.setState({ done: true });
     }
 
     async componentWillUnmount() {
-      this.unlistenLanguage();
+      this.unlistenUnit();
     }
 
     render() {

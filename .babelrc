@@ -1,29 +1,21 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "browsers": ["last 5 versions", "ie >= 11"],
-          "node": "8.9.3"
-        },
-        "modules": false
-      }
-    ],
-    "@babel/preset-react"
-  ],
+  "presets": ["es2015", "react"],
   "env": {
-    "test": {
-      //until full migration of jest to babel 7 will necessary the use of "babel-plugin-dynamic-import-node",
-      //"@babel/plugin-syntax-dynamic-import" at the same time =(
-      "plugins": ["@babel/plugin-transform-modules-commonjs"],
+    "testing": {
+      "plugins": [
+        "babel-plugin-dynamic-import-node"
+      ],
       "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
+        [
+          "env",
+          {
+            "modules": "commonjs"
+          }
+        ]
       ]
     },
     "production": {
-      "presets": ["@babel/preset-env", "@babel/preset-react"],
+      "presets": ["es2015", "react"],
       "plugins": [
         [
           "babel-plugin-styled-components",
@@ -33,12 +25,12 @@
             "minify": true
           }
         ],
-        "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-transform-async-to-generator"
+        "transform-object-rest-spread",
+        "transform-async-to-generator"
       ]
     },
     "development": {
-      "presets": ["@babel/preset-env", "@babel/preset-react"],
+      "presets": [["es2015", { "modules": "umd" }], "react"],
       "plugins": [
         [
           "babel-plugin-styled-components",
@@ -49,15 +41,15 @@
           }
         ],
         [
-          "@babel/plugin-transform-runtime",
+          "transform-runtime",
           {
             "regenerator": true
           }
         ],
-        "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-transform-async-to-generator",
+        "transform-object-rest-spread",
+        "transform-async-to-generator",
         "babel-plugin-dynamic-import-node",
-        "@babel/plugin-syntax-dynamic-import"
+        "syntax-dynamic-import"
       ]
     }
   }
