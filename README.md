@@ -1,100 +1,68 @@
-# Forecast App
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+## Available Scripts
 
-## :octocat: Getting Started
+In the project directory, you can run:
 
-This project was made focusing on the architecture of high scalable projects. The App itself is small but is 100% ready to get as big as possible
+### `npm start`
 
-:heavy_check_mark: Styled-Components
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-:heavy_check_mark: Webpack
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-:heavy_check_mark: React-16
+### `npm test`
 
-:heavy_check_mark: i18n dynamic dictionary for units (only available for 3 units: us, si and uk2) :globe_with_meridians:
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-:heavy_check_mark: High Scale Svg Icons Workflow
+### `npm run build`
 
-:heavy_check_mark: Reusable High scale Modal
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-:heavy_check_mark: Reverse Proxy
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-:heavy_check_mark: Cross-Browser Solution! (even for MS Edge)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Made with :heart: and Redux-zero.
+### `npm run eject`
 
-## :fire: Why Redux-zero as a state manager?
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-[Redux-zero](https://github.com/redux-zero/redux-zero) is a lightweight state container based on Redux.
-I would like to share 3 arguments to choose redux-zero over redux.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-1. Is lighter(less than 1kb) than redux and in projects that are not necessarily high usage of reducers, it helps to focus on what is important.
-2. I participated in the conception of this lib, made mostly by an ex-coworker.
-3. I'm currently focusing my career in leadership and share knowledge that I've learned across these years, so would be
-   an honor gives a presentation about this amazing library.
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-More about Redux-zero [here](https://medium.com/@matheusml/introducing-redux-zero-bea42214c7ee)
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## :fire: Why Reverse Proxy?
+## Learn More
 
-Due to security issues of [DarkskyAPI](https://darksky.net/dev/docs/faq#cross-origin) they throw CORS error from localhost, so it's necessary to work around this. To avoid wasting time setting-up a node+express reverse proxy server in cases like that I use this reverse proxy [service](https://thingproxy.freeboard.io/fetch). (not accessible link)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## :cloud: Installation
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Makefiles aren't Windows friendly, if you have minGW64 and whole environment to run the makefile(Unix/macOS) do this:
+### Code Splitting
 
-```sh
-git clone https://github.com/yuripramos/forecast-app
-cd forecast-app
-make installation
-make build
-make start-server
-access http://localhost:3000
-Search your desired city =)
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-If you **don't** have makefile enviroment ready, do this instead :
+### Analyzing the Bundle Size
 
-```sh
-git clone https://github.com/yuripramos/forecast-app
-cd forecast-app
-npm install or yarn install
-npm run build
-npm run start:server
-access http://localhost:3000
-Search your desired city =)
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-**Requires node >= 8.9.3**
+### Making a Progressive Web App
 
-## Tests
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-- % stmts = 90.96%
-- % Branch = 71.43%
-- % funcs = 93.1%
-- % Lines = 91.96%
+### Advanced Configuration
 
-- Average ~= **87%**
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-<!-- ## :inbox_tray: Continuous Deployment
+### Deployment
 
-I'm using [Netlify](https://app.netlify.com) to continuous deployment
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-https://quirky-pike-865346.netlify.com/ -->
+### `npm run build` fails to minify
 
-## Roadmap
-
-**Release 0.1** (current) - First release of the app
-
-**Release 0.2** - Refining UI/UX and new units in dictionary
-
-**Release 0.3** - Improvements in mobile devices screens
-
-## :exclamation: Credits
-
-Yuri Ramos
-
-## :scroll: License
-
-MIT
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

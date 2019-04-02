@@ -1,16 +1,12 @@
-const path = require("path");
-/*eslint-disable*/
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-const express = require("express");
-const app = express(),
-  DIST_DIR = path.resolve(__dirname, "../build/"),
-  HTML_FILE = path.join(DIST_DIR, "index.html");
-app.use(express.static(DIST_DIR));
-app.get("*", (req, res) => {
-  res.sendFile(HTML_FILE);
-});
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`App listening to ${PORT} ....`);
-  console.log("Press Ctrl+C to quit.");
-});
+ReactDOM.render(<App />, document.getElementById('root'));
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
