@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Forecast from "../Forecast";
+import Calculator from "../Calculator";
 import Layout from "../common/Layout";
 class Routes extends Component {
   render() {
     return (
       <Switch>
         <Layout>
-          <Route exact path="/" component={Forecast} />
+          <Route exact path="/" component={Calculator} />
           <Route>
             <Switch>
-              <Route path="/forecast" component={Forecast} />
+              <Route path="/calc" component={Calculator} />
             </Switch>
           </Route>
         </Layout>
