@@ -4,7 +4,7 @@
   "description": "Forecast App",
   "main": "/src/App.js",
   "engines": {
-    "node": ">=8.9.3"
+    "node": "8.9.3"
   },
   "scripts": {
     "installation": "npm install",
