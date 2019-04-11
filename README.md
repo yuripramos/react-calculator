@@ -1,3 +1,3 @@
-##React-calculator
+## React-calculator
 
 `npm run start`
